@@ -94,7 +94,9 @@
 %===============================================================================
 
 %\\\\\\\\\\\\\\\\\\\\\
-\begin{frame}[c]{Context}
+\begin{frame}[c, allowframebreaks]{Context}
+
+    \vfill
     
     The \alert{active learning} framework:
     %
@@ -106,7 +108,7 @@
         \item by posing questions to a \alert{teacher}
 
         \vfill
-        
+
         \item questions made by the learner are
         %
         \begin{itemize}
@@ -118,15 +120,12 @@
         \vfill
         
     \end{itemize}
-\end{frame}
-%\\\\\\\\\\\\\\\\\\\\\
 
-%\\\\\\\\\\\\\\\\\\\\\
-\begin{frame}[c]{Context}
+    \framebreak
 
     \begin{figure}
         \centering
-        \includegraphics[width=0.7\textwidth]{figures/queries-example}
+        \includegraphics[width=0.8\textwidth]{figures/queries-example}
         \caption{Example of membership and equivalence queries}
         \label{}
     \end{figure}
@@ -157,47 +156,64 @@
 \end{frame}
 %\\\\\\\\\\\\\\\\\\\\\
 
-%\\\\\\\\\\\\\\\\\\\\\
-\begin{frame}{Some state of the art (optional)}
 
-    Provide relevant information about the state of the art / related works here, possibly with references
-
-\end{frame}
-%\\\\\\\\\\\\\\\\\\\\\
+%===============================================================================
+\section{Design}
+%===============================================================================
 
 %\\\\\\\\\\\\\\\\\\\\\
-\begin{frame}{Contribution of the paper}
+\begin{frame}[c, allowframebreaks]
+\frametitle{Algorithm}
 
-\begin{block}{Explicitly state the contributions of the paper}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figures/algorithm}
+        \caption{Overview of the exact learning algorithm}
+        \label{fig:algorithm}
+    \end{figure}
+
+    \framebreak
+
+%    \vfill
+
+    Equivalence query are \alert{symulated} via random \alert{sampling}.
+    %
+    The algorithm checks if the classification of the examples match with the information in the hypothesis:
+
     \begin{itemize}
-        \item contribution 1
-        \item contribution 2
+        %
+        \item true inclusions must be \alert{logical consequences}
+        %
+        \item false ones must not
+        %
     \end{itemize}
-\end{block}
+
+%    \vfill
+
+    If the hypothesis fits the classification of the concept inclusions, learning stops.
+    Otherwise, the inclusion not fitting the hypothesis is used as a \alert{counterexample}.
+
+%    \vfill
+
+    \framebreak
+
+    The sampling-based simulation can yield \alert{PAC} \ccite{DBLP:journals/cacm/Valiant84} guarantees when the sample size
+
+    \begin{equation*}
+        \lvert S \rvert \geq \frac{\ln\left(\lvert H \rvert / \gamma\right)}{\epsilon}
+    \end{equation*}
+
+    is computed from the hypothesis space $H$ (\EL terminologies of bounded structure) and parameters $\epsilon$ (error) and $\gamma$ (confidence).
+
 
 \end{frame}
 %\\\\\\\\\\\\\\\\\\\\\
 
-%===============================================================================
-\section{Theory / modelling / design}
-%===============================================================================
-
 %\\\\\\\\\\\\\\\\\\\\\
-\begin{frame}%[allowframebreaks]
-\frametitle{Theory / modelling / design}
+\begin{frame}[c, allowframebreaks]
+\frametitle{Learner's operations}
 
-    Provide 2-3 slides discussing the Theory / modelling / design
 
-\end{frame}
-%\\\\\\\\\\\\\\\\\\\\\
-
-\section{Case study / Experiments / Results}
-
-%\\\\\\\\\\\\\\\\\\\\\
-\begin{frame}%[allowframebreaks]
-\frametitle{Case study / Experiments / Results}
-
-    Provide 2-3 slides discussing the Case study / Experiments / Results of the paper
 
 \end{frame}
 %\\\\\\\\\\\\\\\\\\\\\
