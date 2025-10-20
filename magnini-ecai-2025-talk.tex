@@ -11,7 +11,7 @@
 %
 \usepackage{magnini-ecai-2025-talk}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title[Short Title]{
+\title[Learning \EL Terminologies from LLMs]{
     % same title of the presented paper
     Actively Learning \EL Terminologies
     \\
@@ -96,70 +96,63 @@
 %\\\\\\\\\\\\\\\\\\\\\
 \begin{frame}[c]{Context}
     
-    Provide some context (max 4-5 items):
+    The \alert{active learning} framework:
     %
     \vfill
     %
     \begin{itemize}
-        \item fact 1
+        \item a \alert{learner} attempts to learn some kind of \alert{knowledge}
+        %
+        \item by posing questions to a \alert{teacher}
+
+        \vfill
+        
+        \item questions made by the learner are
         %
         \begin{itemize}
-            \item note
+            \item \alert{membership} queries $\rightarrow$ ask whether \alert{concept inclusions} are true or false
+            %
+            \item \alert{equivalence} queries $\rightarrow$ ask whether the idea od the learner about the knowledge of the teacher is correct or not
         \end{itemize}
         
         \vfill
-        
-        \item[$\Rightarrow$] fact 2 implied by fact 1
-        %
-        \begin{itemize}
-            \item[!] important \alert{notice}
-        \end{itemize}
-        
-        \vfill
-        
-        \item fact 3
-        %
-        \begin{itemize}
-            \item note
-        \end{itemize}
-        
-        \vfill
-        
-        \item fact 4
         
     \end{itemize}
 \end{frame}
 %\\\\\\\\\\\\\\\\\\\\\
 
 %\\\\\\\\\\\\\\\\\\\\\
+\begin{frame}[c]{Context}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.7\textwidth]{figures/queries-example}
+        \caption{Example of membership and equivalence queries}
+        \label{}
+    \end{figure}
+
+    We want to use \alert{Large Language Models} (LLMs) as teachers in the \alert{Angluin}'s exact learning framework \ccite{DBLP:journals/ml/Angluin87}.
+
+\end{frame}
+%\\\\\\\\\\\\\\\\\\\\\
+
+%\\\\\\\\\\\\\\\\\\\\\
 \begin{frame}[c]{Motivation}
-    Enumerate motivations for this work:
+    Some motivations for our work:
     %
     \vfill
     %
     \begin{itemize}
-        \item motivation 1
+        \item to the best of our knowledge, the only implementation of the Angluin's exact learning framework uses a \alert{synthetic teacher} \ccite{DBLP:conf/kr/DuarteKO18}
         %
-        \begin{itemize}
-            \item[e.g.] example
-        \end{itemize}
-        
-        \vfill
-        
-        \item motivation 2
+        \item ontology construction is a costly and time-consuming task that requires domain experts
         %
-        \begin{itemize}
-            \item note
-        \end{itemize}
-        
-        \vfill
-        
-        \item motivation 3 with citations \ccite{crawford2016artificial,RibeiroSG16,wexler2017computer}
-        
-        \vfill
-        
-        \item etc
-        
+        \item arguably, a boring and repetitive task for humans
+        %
+        \item with LLMs as teachers, we can \alert{automate} the process of ontology construction
+        %
+        \item with Angluin's framework, we build ontologies in a systematic way
+        %
     \end{itemize}
 \end{frame}
 %\\\\\\\\\\\\\\\\\\\\\
