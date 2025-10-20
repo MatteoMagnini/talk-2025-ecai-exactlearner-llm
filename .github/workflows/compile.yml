@@ -5,7 +5,7 @@ on:
       - main
       - master
 env:
-  LATEX_ROOT: abcd-venue-20XX-talk
+  LATEX_ROOT: magnini-ecai-2025-talk
 jobs:
   compile:
     permissions: write-all
