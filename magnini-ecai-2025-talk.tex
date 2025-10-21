@@ -300,32 +300,85 @@
 
 %\\\\\\\\\\\\\\\\\\\\\
 
-\section{Conclusions \& future works}
+\section{Validation}
 
 %\\\\\\\\\\\\\\\\\\\\\
-\begin{frame}%[allowframebreaks]
-\frametitle{Conclusions \& future works}
+\begin{frame}[c,allowframebreaks]
+\frametitle{Experiment setup}
 
-\begin{block}{Summing up}
-    Summarise the most relevant contributions of this study:
-    %
-    \begin{itemize}
-        \item conclusion 1
-        \item conclusion 2
-        \item conclusion 3
-    \end{itemize}
-\end{block}
+    \begin{table}[]
+        \centering
+        \caption{Ontology statistics and PAC sample sizes with $\epsilon=0.2$ and $\gamma=0.1$. $\NC$ and $\NR$ are the number of concept and role names occurring in the ontologies.}
+        \label{tb:small-ontologies}
+        \resizebox{\columnwidth}{!}{
+            \begin{tabular}{|l|c|c|c|c|c|}
+                \hline
+                \textbf{Ontology} & \textbf{$\NC$} & \textbf{$\NR$} & \textbf{Log. Ax.} & \textbf{PAC Sample} & \textbf{Poss. Ax.} \\
+                \hline
+                \rowcolor[HTML]{EFEFEF}
+                Animals & 17 & 4 & 12 & 542 & 6,936\\
+                \hline
+                \rowcolor[HTML]{FFFFFF}
+                Cell & 22 & 0 & 24 & 1,119 & 10,164\\
+                \hline
+                \rowcolor[HTML]{EFEFEF}
+                Football & 10 & 3 & 9 & 341 & 1,500\\
+                \hline
+                \rowcolor[HTML]{FFFFFF}
+                Generations & 20 & 4 & 18 & 847 & 10,800\\
+                \hline
+                \rowcolor[HTML]{EFEFEF}
+                University & 7 & 3 & 4 & 139 & 588\\
+                \hline
+            \end{tabular}
+        }
+    \end{table}
 
-\begin{exampleblock}{Future works}
-    Sketch some future research directions
-    %
-    \begin{itemize}
-        \item future work 1
-        \item future work 2
-    \end{itemize}
-\end{exampleblock}
+    \framebreak
 
-(may be split into 2 slides)
+    \begin{table}[]
+        \centering
+        \caption{Ontology statistics and PAC sample sizes with $\epsilon=0.2$ and $\gamma=0.1$ for medical ontologies (sub modules of the Galen ontology \ccite{Rector2008TheGH}).}
+        \label{tb:modules-ontologies}
+        \resizebox{\columnwidth}{!}{
+        \begin{tabular}{|l|c|c|c|c|c|}
+            \hline
+            \textbf{Ontology} & \textbf{\NC} & \textbf{\NR} & \textbf{Log. Ax.} & \textbf{PAC Sample}  & \textbf{Pos. Ax.}  \\
+            \hline
+            \rowcolor[HTML]{EFEFEF}
+            Ab. Elb. J. C. & 27 & 14 & 43 & 2,286 & 39,366\\
+            \hline
+            \rowcolor[HTML]{FFFFFF}
+            BNF Sec. & 36 & 24 & 80 & 4,646 & 107,568\\
+            \hline
+            \rowcolor[HTML]{EFEFEF}
+            Chlorhexidine & 23 & 14 & 38 & 1,946 & 26,450\\
+            \hline
+            \rowcolor[HTML]{FFFFFF}
+            Cone of Tissue & 42 & 42 & 100 & 6,163 & 220,500\\
+            \hline
+            \rowcolor[HTML]{EFEFEF}
+            Kalli Krein & 18 & 10 & 27 & 1,279 & 11,988\\
+            \hline
+            \rowcolor[HTML]{FFFFFF}
+            Neon & 16 & 10 & 25 & 1,149 & 8,960\\
+            \hline
+            \rowcolor[HTML]{EFEFEF}
+            Pin & 43 & 40 & 99 & 6,113 & 225,578\\
+            \hline
+            \rowcolor[HTML]{FFFFFF}
+            Pros. Drug & 29 & 14 & 47 & 2,540 & 47,096\\
+            \hline
+            \rowcolor[HTML]{EFEFEF}
+            Zopiclone & 32 & 36 & 77 & 4,465 & 105,472\\
+            \hline
+            \rowcolor[HTML]{FFFFFF}
+            Zuccini & 33 & 22 & 58 & 3,295 & 82,764\\
+            \hline
+        \end{tabular}
+        }
+        \end{table}
+
 
 \end{frame}
 %\\\\\\\\\\\\\\\\\\\\\
