@@ -213,9 +213,91 @@
 \begin{frame}[c, allowframebreaks]
 \frametitle{Learner's operations}
 
+    When the teacher replies with a counterexample, the learner before adding it to the hypothesis \alert{processes} it.
+    The learner performs operations, that use membership queries, in order to \alert{maximise} how informative the concept inclusions are and also to \alert{minimise} their size.
 
+    \begin{itemize}
+        \item Decompose Left
+        \item Decompose Right
+        \item Merging
+        \item Branching
+        \item Saturation
+        \item Desaturation
+    \end{itemize}
 
+    \framebreak
+
+    Decompose Right
+
+    \begin{columns}[c]
+    \column{0.55\textwidth}
+    \vspace{-1cm}
+    \begin{equation*}
+    \begin{aligned}
+        T &= \{A \sqsubseteq \exists r.\top,\; B \sqsubseteq \exists r.\top,\; A \sqsubseteq B\} \\
+        H &= \{A \sqsubseteq B\} \\
+        \text{C} &= A \sqsubseteq
+            \textcolor{blue}{B \sqcap}
+            \textcolor{orange}{\exists s.\top}
+            \textcolor{blue}{\sqcap}
+            \textcolor{green}{\exists r.\top}
+        \\[0.8em]
+        &\Downarrow \\[0.8em]
+        \text{C} &= \textcolor{blue}{B} \sqsubseteq
+            \textcolor{orange}{\exists s.\top}
+    \end{aligned}
+    \end{equation*}
+
+    \column{0.45\textwidth}
+    \centering
+
+    \vspace{1cm}
+
+    \begin{tikzpicture}[
+      every node/.style={
+        draw, rounded corners=4pt,
+        minimum width=1.6cm, minimum height=0.8cm,
+        align=center, thick
+      },
+      root/.style={draw=blue},
+      leftchild/.style={draw=orange!90!black},
+      rightchild/.style={draw=green!60!black},
+      arrow/.style={->, very thick, shorten >=2pt, shorten <=2pt}
+    ]
+        \node[root] (root) {\{$B$\}};
+        \node[leftchild, below left=0.7cm and 0.1cm of root] (left) {\{\}};
+        \node[rightchild, below right=0.7cm and 0.1cm of root] (right) {\{\}};
+        \draw[arrow, orange!90!black] (root) -- (left)
+            node[midway, above left=-0.1cm, text=black, font=\small, fill=none, draw=none] {$s$};
+        \draw[arrow, green!60!black] (root) -- (right)
+            node[midway, above right=-0.1cm, text=black, font=\small, fill=none, draw=none] {$r$};
+    \end{tikzpicture}
+
+    \vspace{1cm}
+
+    \begin{tikzpicture}[
+      every node/.style={
+        draw, rounded corners=4pt,
+        minimum width=1.6cm, minimum height=0.8cm,
+        align=center, thick
+      },
+      root/.style={draw=black},
+      leftchild/.style={draw=orange!90!black},
+      rightchild/.style={draw=black},
+      arrow/.style={->, very thick, shorten >=2pt, shorten <=2pt}
+    ]
+        \node[root] (root) {\{$B$\}};
+        \node[leftchild, below left=0.7cm and 0.1cm of root] (left) {\{\}};
+        \node[rightchild, below right=0.7cm and 0.1cm of root] (right) {\{\}};
+        \draw[arrow, orange!90!black] (root) -- (left)
+            node[midway, above left=-0.1cm, text=black, font=\small, fill=none, draw=none] {$s$};
+        \draw[arrow, black] (root) -- (right)
+            node[midway, above right=-0.1cm, text=black, font=\small, fill=none, draw=none] {$r$};
+    \end{tikzpicture}
+
+    \end{columns}
 \end{frame}
+
 %\\\\\\\\\\\\\\\\\\\\\
 
 \section{Conclusions \& future works}
