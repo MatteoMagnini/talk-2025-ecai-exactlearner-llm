@@ -304,7 +304,7 @@
 
 %\\\\\\\\\\\\\\\\\\\\\
 \begin{frame}[c,allowframebreaks]
-\frametitle{Experiment setup}
+\frametitle{Ontologies}
 
     \begin{table}[]
         \centering
@@ -379,9 +379,58 @@
         }
         \end{table}
 
-
 \end{frame}
 %\\\\\\\\\\\\\\\\\\\\\
+
+%\\\\\\\\\\\\\\\\\\\\\
+\begin{frame}[c,allowframebreaks]
+\frametitle{LLMs and how to query them}
+
+    LLMs used as teachers:
+
+    \begin{itemize}
+        \item Llama2 (13B)
+        \item Llama3 (8B)
+        \item Mistral (7B)
+        \item Mixtral (47B)
+    \end{itemize}
+
+    \vspace{1cm}
+
+    $\textcolor{blue}{\text{Cat}} \sqsubseteq \textcolor{green}{\text{Mammal}} \sqcap \textcolor{orange}{\exists \text{eats.Meat}}$
+
+    \begin{itemize}
+        \item Manchester OWL Syntax
+        \begin{itemize}
+            \item \textcolor{blue}{Cat} SubClassOf \textcolor{green}{\text{Mammal}} and \textcolor{orange}{eats some Meat}?
+        \end{itemize}
+        \item Natural Language
+        \begin{itemize}
+            \item Can \textcolor{blue}{Cat} be considered a subcategory of ``\textcolor{green}{\text{Mammal}} that is also \textcolor{orange}{something that eats some Meat}''?
+        \end{itemize}
+    \end{itemize}
+
+    \framebreak
+
+    Two different system prompts used to query the LLMs:
+    \begin{itemize}
+        \item Concise:
+        \begin{itemize}
+            \item Answer with only True or False.
+        \end{itemize}
+        \item Detailed:
+        \begin{itemize}
+            \item You need to classify the following statements as True or False.
+            The statement will be provided in either Manchester OWL syntax or natural language.
+            Strictly follow these guidelines:\\
+            1. answer with only True or False;\\
+            2. entities with has part relation are not in a subclass relation;\\
+            3. take a deep breath before answering;\\
+            4. if you are unsure about the classification, answer with False.
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
 
 %===============================================================================
 \section*{}
